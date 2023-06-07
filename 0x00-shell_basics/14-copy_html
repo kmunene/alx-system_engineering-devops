@@ -1,2 +1,2 @@
 #!/bin/bash
-for f in *.html; do cp -nv -- "$f" ../; done
+rsync -av --ignore-existing --update *.html ..
