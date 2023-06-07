@@ -1,2 +1,2 @@
 #!/bin/bash
-prev_cwd=$(cd -P && pwd)
+cd -
