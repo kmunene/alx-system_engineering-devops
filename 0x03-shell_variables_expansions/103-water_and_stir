@@ -1,3 +1,2 @@
 #!/bin/bash
-echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.' '01234'))))) | tr '01234567' 'bestchol')
-
+echo (printf "%s" "$WATER + $STIR" | dc -e "16 i $water_base o $result_base p")
