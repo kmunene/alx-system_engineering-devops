@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-'''get data from an api'''
+"""Gather data from an API"""
 
 import requests
 import sys
 
 
 if __name__ == "__main__":
+    # Define the URL for the REST API
     url = "https://jsonplaceholder.typicode.com/"
 
     # send a GET request to retrieve user info
@@ -15,7 +16,7 @@ if __name__ == "__main__":
     todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
 
     # filter completed TODO list and store titles in a list
-    completed = [task.get("title") for task in todos if task.get("completed") is True]
+    completed = [t.get("title") for t in todos if t.get("completed") is True]
 
     # print employee's name, completed tasks & total no of tasks
     print("Employee {} is done with tasks({}/{}):".format(
